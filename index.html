@@ -1,0 +1,829 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image" href="./assets/48fb89ba-914b-4572-a909-fafdcb7bc4d9.jpg" />
+    <link rel="stylesheet" href="styles.css">
+    <meta ="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kumron-Simulator</title>
+  </head>
+  <body>
+    <div class='Hdiv'>
+        <h1 class="Header">Toddler Machine Simulator</h1>
+        </div>
+      <div id='contents'>
+        <div id='syntax'>
+         <p>1xx LOAD xx</p>
+         <p>2xx STORE xx</p>
+         <p>3xx ADD xx</p>
+         <p>4xx SUB xx</p>
+         <p>500 HALT</p>
+         <p>5xx JUMP xx</p>
+         <p>6xx JUMPZ xx</p>
+         <p>7xx JUMPN xx</p>
+         <p>8xx INPUT xx</p>
+         <p>9xx OUTPUT xx</p>
+        </div>
+        <div id='editor'>
+            <div class="Memline" id="m1">
+                <p class="address" id="a1">(01)</p>
+                <p class="ir" id="i1">_0000</p>
+                <input type="text" class="func" id="f1" />
+                <input type="text" class="code" id="c1" />
+            </div>
+            
+            
+            <div class="Memline" id="m2">
+                <p class="address" id="a2">(02)</p>
+                <p class="ir" id="i2">_0000</p>
+                <input type="text" class="func" id="f2" />
+                <input type="text" class="code" id="c2" />
+            </div>
+            
+            
+            <div class="Memline" id="m3">
+                <p class="address" id="a3">(03)</p>
+                <p class="ir" id="i3">_0000</p>
+                <input type="text" class="func" id="f3" />
+                <input type="text" class="code" id="c3" />
+            </div>
+            
+            
+            <div class="Memline" id="m4">
+                <p class="address" id="a4">(04)</p>
+                <p class="ir" id="i4">_0000</p>
+                <input type="text" class="func" id="f4" />
+                <input type="text" class="code" id="c4" />
+            </div>
+            
+            
+            <div class="Memline" id="m5">
+                <p class="address" id="a5">(05)</p>
+                <p class="ir" id="i5">_0000</p>
+                <input type="text" class="func" id="f5" />
+                <input type="text" class="code" id="c5" />
+            </div>
+            
+            
+            <div class="Memline" id="m6">
+                <p class="address" id="a6">(06)</p>
+                <p class="ir" id="i6">_0000</p>
+                <input type="text" class="func" id="f6" />
+                <input type="text" class="code" id="c6" />
+            </div>
+            
+            
+            <div class="Memline" id="m7">
+                <p class="address" id="a7">(07)</p>
+                <p class="ir" id="i7">_0000</p>
+                <input type="text" class="func" id="f7" />
+                <input type="text" class="code" id="c7" />
+            </div>
+            
+            
+            <div class="Memline" id="m8">
+                <p class="address" id="a8">(08)</p>
+                <p class="ir" id="i8">_0000</p>
+                <input type="text" class="func" id="f8" />
+                <input type="text" class="code" id="c8" />
+            </div>
+            
+            
+            <div class="Memline" id="m9">
+                <p class="address" id="a9">(09)</p>
+                <p class="ir" id="i9">_0000</p>
+                <input type="text" class="func" id="f9" />
+                <input type="text" class="code" id="c9" />
+            </div>
+            
+            
+            <div class="Memline" id="m10">
+                <p class="address" id="a10">(10)</p>
+                <p class="ir" id="i10">_0000</p>
+                <input type="text" class="func" id="f10" />
+                <input type="text" class="code" id="c10" />
+            </div>
+            
+            
+            <div class="Memline" id="m11">
+                <p class="address" id="a11">(11)</p>
+                <p class="ir" id="i11">_0000</p>
+                <input type="text" class="func" id="f11" />
+                <input type="text" class="code" id="c11" />
+            </div>
+            
+            
+            <div class="Memline" id="m12">
+                <p class="address" id="a12">(12)</p>
+                <p class="ir" id="i12">_0000</p>
+                <input type="text" class="func" id="f12" />
+                <input type="text" class="code" id="c12" />
+            </div>
+            
+            
+            <div class="Memline" id="m13">
+                <p class="address" id="a13">(13)</p>
+                <p class="ir" id="i13">_0000</p>
+                <input type="text" class="func" id="f13" />
+                <input type="text" class="code" id="c13" />
+            </div>
+            
+            
+            <div class="Memline" id="m14">
+                <p class="address" id="a14">(14)</p>
+                <p class="ir" id="i14">_0000</p>
+                <input type="text" class="func" id="f14" />
+                <input type="text" class="code" id="c14" />
+            </div>
+            
+            
+            <div class="Memline" id="m15">
+                <p class="address" id="a15">(15)</p>
+                <p class="ir" id="i15">_0000</p>
+                <input type="text" class="func" id="f15" />
+                <input type="text" class="code" id="c15" />
+            </div>
+            
+            
+            <div class="Memline" id="m16">
+                <p class="address" id="a16">(16)</p>
+                <p class="ir" id="i16">_0000</p>
+                <input type="text" class="func" id="f16" />
+                <input type="text" class="code" id="c16" />
+            </div>
+            
+            
+            <div class="Memline" id="m17">
+                <p class="address" id="a17">(17)</p>
+                <p class="ir" id="i17">_0000</p>
+                <input type="text" class="func" id="f17" />
+                <input type="text" class="code" id="c17" />
+            </div>
+            
+            
+            <div class="Memline" id="m18">
+                <p class="address" id="a18">(18)</p>
+                <p class="ir" id="i18">_0000</p>
+                <input type="text" class="func" id="f18" />
+                <input type="text" class="code" id="c18" />
+            </div>
+            
+            
+            <div class="Memline" id="m19">
+                <p class="address" id="a19">(19)</p>
+                <p class="ir" id="i19">_0000</p>
+                <input type="text" class="func" id="f19" />
+                <input type="text" class="code" id="c19" />
+            </div>
+            
+            
+            <div class="Memline" id="m20">
+                <p class="address" id="a20">(20)</p>
+                <p class="ir" id="i20">_0000</p>
+                <input type="text" class="func" id="f20" />
+                <input type="text" class="code" id="c20" />
+            </div>
+            
+            
+            <div class="Memline" id="m21">
+                <p class="address" id="a21">(21)</p>
+                <p class="ir" id="i21">_0000</p>
+                <input type="text" class="func" id="f21" />
+                <input type="text" class="code" id="c21" />
+            </div>
+            
+            
+            <div class="Memline" id="m22">
+                <p class="address" id="a22">(22)</p>
+                <p class="ir" id="i22">_0000</p>
+                <input type="text" class="func" id="f22" />
+                <input type="text" class="code" id="c22" />
+            </div>
+            
+            
+            <div class="Memline" id="m23">
+                <p class="address" id="a23">(23)</p>
+                <p class="ir" id="i23">_0000</p>
+                <input type="text" class="func" id="f23" />
+                <input type="text" class="code" id="c23" />
+            </div>
+            
+            
+            <div class="Memline" id="m24">
+                <p class="address" id="a24">(24)</p>
+                <p class="ir" id="i24">_0000</p>
+                <input type="text" class="func" id="f24" />
+                <input type="text" class="code" id="c24" />
+            </div>
+            
+            
+            <div class="Memline" id="m25">
+                <p class="address" id="a25">(25)</p>
+                <p class="ir" id="i25">_0000</p>
+                <input type="text" class="func" id="f25" />
+                <input type="text" class="code" id="c25" />
+            </div>
+            
+            
+            <div class="Memline" id="m26">
+                <p class="address" id="a26">(26)</p>
+                <p class="ir" id="i26">_0000</p>
+                <input type="text" class="func" id="f26" />
+                <input type="text" class="code" id="c26" />
+            </div>
+            
+            
+            <div class="Memline" id="m27">
+                <p class="address" id="a27">(27)</p>
+                <p class="ir" id="i27">_0000</p>
+                <input type="text" class="func" id="f27" />
+                <input type="text" class="code" id="c27" />
+            </div>
+            
+            
+            <div class="Memline" id="m28">
+                <p class="address" id="a28">(28)</p>
+                <p class="ir" id="i28">_0000</p>
+                <input type="text" class="func" id="f28" />
+                <input type="text" class="code" id="c28" />
+            </div>
+            
+            
+            <div class="Memline" id="m29">
+                <p class="address" id="a29">(29)</p>
+                <p class="ir" id="i29">_0000</p>
+                <input type="text" class="func" id="f29" />
+                <input type="text" class="code" id="c29" />
+            </div>
+            
+            
+            <div class="Memline" id="m30">
+                <p class="address" id="a30">(30)</p>
+                <p class="ir" id="i30">_0000</p>
+                <input type="text" class="func" id="f30" />
+                <input type="text" class="code" id="c30" />
+            </div>
+            
+            
+            <div class="Memline" id="m31">
+                <p class="address" id="a31">(31)</p>
+                <p class="ir" id="i31">_0000</p>
+                <input type="text" class="func" id="f31" />
+                <input type="text" class="code" id="c31" />
+            </div>
+            
+            
+            <div class="Memline" id="m32">
+                <p class="address" id="a32">(32)</p>
+                <p class="ir" id="i32">_0000</p>
+                <input type="text" class="func" id="f32" />
+                <input type="text" class="code" id="c32" />
+            </div>
+            
+            
+            <div class="Memline" id="m33">
+                <p class="address" id="a33">(33)</p>
+                <p class="ir" id="i33">_0000</p>
+                <input type="text" class="func" id="f33" />
+                <input type="text" class="code" id="c33" />
+            </div>
+            
+            
+            <div class="Memline" id="m34">
+                <p class="address" id="a34">(34)</p>
+                <p class="ir" id="i34">_0000</p>
+                <input type="text" class="func" id="f34" />
+                <input type="text" class="code" id="c34" />
+            </div>
+            
+            
+            <div class="Memline" id="m35">
+                <p class="address" id="a35">(35)</p>
+                <p class="ir" id="i35">_0000</p>
+                <input type="text" class="func" id="f35" />
+                <input type="text" class="code" id="c35" />
+            </div>
+            
+            
+            <div class="Memline" id="m36">
+                <p class="address" id="a36">(36)</p>
+                <p class="ir" id="i36">_0000</p>
+                <input type="text" class="func" id="f36" />
+                <input type="text" class="code" id="c36" />
+            </div>
+            
+            
+            <div class="Memline" id="m37">
+                <p class="address" id="a37">(37)</p>
+                <p class="ir" id="i37">_0000</p>
+                <input type="text" class="func" id="f37" />
+                <input type="text" class="code" id="c37" />
+            </div>
+            
+            
+            <div class="Memline" id="m38">
+                <p class="address" id="a38">(38)</p>
+                <p class="ir" id="i38">_0000</p>
+                <input type="text" class="func" id="f38" />
+                <input type="text" class="code" id="c38" />
+            </div>
+            
+            
+            <div class="Memline" id="m39">
+                <p class="address" id="a39">(39)</p>
+                <p class="ir" id="i39">_0000</p>
+                <input type="text" class="func" id="f39" />
+                <input type="text" class="code" id="c39" />
+            </div>
+            
+            
+            <div class="Memline" id="m40">
+                <p class="address" id="a40">(40)</p>
+                <p class="ir" id="i40">_0000</p>
+                <input type="text" class="func" id="f40" />
+                <input type="text" class="code" id="c40" />
+            </div>
+            
+            
+            <div class="Memline" id="m41">
+                <p class="address" id="a41">(41)</p>
+                <p class="ir" id="i41">_0000</p>
+                <input type="text" class="func" id="f41" />
+                <input type="text" class="code" id="c41" />
+            </div>
+            
+            
+            <div class="Memline" id="m42">
+                <p class="address" id="a42">(42)</p>
+                <p class="ir" id="i42">_0000</p>
+                <input type="text" class="func" id="f42" />
+                <input type="text" class="code" id="c42" />
+            </div>
+            
+            
+            <div class="Memline" id="m43">
+                <p class="address" id="a43">(43)</p>
+                <p class="ir" id="i43">_0000</p>
+                <input type="text" class="func" id="f43" />
+                <input type="text" class="code" id="c43" />
+            </div>
+            
+            
+            <div class="Memline" id="m44">
+                <p class="address" id="a44">(44)</p>
+                <p class="ir" id="i44">_0000</p>
+                <input type="text" class="func" id="f44" />
+                <input type="text" class="code" id="c44" />
+            </div>
+            
+            
+            <div class="Memline" id="m45">
+                <p class="address" id="a45">(45)</p>
+                <p class="ir" id="i45">_0000</p>
+                <input type="text" class="func" id="f45" />
+                <input type="text" class="code" id="c45" />
+            </div>
+            
+            
+            <div class="Memline" id="m46">
+                <p class="address" id="a46">(46)</p>
+                <p class="ir" id="i46">_0000</p>
+                <input type="text" class="func" id="f46" />
+                <input type="text" class="code" id="c46" />
+            </div>
+            
+            
+            <div class="Memline" id="m47">
+                <p class="address" id="a47">(47)</p>
+                <p class="ir" id="i47">_0000</p>
+                <input type="text" class="func" id="f47" />
+                <input type="text" class="code" id="c47" />
+            </div>
+            
+            
+            <div class="Memline" id="m48">
+                <p class="address" id="a48">(48)</p>
+                <p class="ir" id="i48">_0000</p>
+                <input type="text" class="func" id="f48" />
+                <input type="text" class="code" id="c48" />
+            </div>
+            
+            
+            <div class="Memline" id="m49">
+                <p class="address" id="a49">(49)</p>
+                <p class="ir" id="i49">_0000</p>
+                <input type="text" class="func" id="f49" />
+                <input type="text" class="code" id="c49" />
+            </div>
+            
+            
+            <div class="Memline" id="m50">
+                <p class="address" id="a50">(50)</p>
+                <p class="ir" id="i50">_0000</p>
+                <input type="text" class="func" id="f50" />
+                <input type="text" class="code" id="c50" />
+            </div>
+            
+            
+            <div class="Memline" id="m51">
+                <p class="address" id="a51">(51)</p>
+                <p class="ir" id="i51">_0000</p>
+                <input type="text" class="func" id="f51" />
+                <input type="text" class="code" id="c51" />
+            </div>
+            
+            
+            <div class="Memline" id="m52">
+                <p class="address" id="a52">(52)</p>
+                <p class="ir" id="i52">_0000</p>
+                <input type="text" class="func" id="f52" />
+                <input type="text" class="code" id="c52" />
+            </div>
+            
+            
+            <div class="Memline" id="m53">
+                <p class="address" id="a53">(53)</p>
+                <p class="ir" id="i53">_0000</p>
+                <input type="text" class="func" id="f53" />
+                <input type="text" class="code" id="c53" />
+            </div>
+            
+            
+            <div class="Memline" id="m54">
+                <p class="address" id="a54">(54)</p>
+                <p class="ir" id="i54">_0000</p>
+                <input type="text" class="func" id="f54" />
+                <input type="text" class="code" id="c54" />
+            </div>
+            
+            
+            <div class="Memline" id="m55">
+                <p class="address" id="a55">(55)</p>
+                <p class="ir" id="i55">_0000</p>
+                <input type="text" class="func" id="f55" />
+                <input type="text" class="code" id="c55" />
+            </div>
+            
+            
+            <div class="Memline" id="m56">
+                <p class="address" id="a56">(56)</p>
+                <p class="ir" id="i56">_0000</p>
+                <input type="text" class="func" id="f56" />
+                <input type="text" class="code" id="c56" />
+            </div>
+            
+            
+            <div class="Memline" id="m57">
+                <p class="address" id="a57">(57)</p>
+                <p class="ir" id="i57">_0000</p>
+                <input type="text" class="func" id="f57" />
+                <input type="text" class="code" id="c57" />
+            </div>
+            
+            
+            <div class="Memline" id="m58">
+                <p class="address" id="a58">(58)</p>
+                <p class="ir" id="i58">_0000</p>
+                <input type="text" class="func" id="f58" />
+                <input type="text" class="code" id="c58" />
+            </div>
+            
+            
+            <div class="Memline" id="m59">
+                <p class="address" id="a59">(59)</p>
+                <p class="ir" id="i59">_0000</p>
+                <input type="text" class="func" id="f59" />
+                <input type="text" class="code" id="c59" />
+            </div>
+            
+            
+            <div class="Memline" id="m60">
+                <p class="address" id="a60">(60)</p>
+                <p class="ir" id="i60">_0000</p>
+                <input type="text" class="func" id="f60" />
+                <input type="text" class="code" id="c60" />
+            </div>
+            
+            
+            <div class="Memline" id="m61">
+                <p class="address" id="a61">(61)</p>
+                <p class="ir" id="i61">_0000</p>
+                <input type="text" class="func" id="f61" />
+                <input type="text" class="code" id="c61" />
+            </div>
+            
+            
+            <div class="Memline" id="m62">
+                <p class="address" id="a62">(62)</p>
+                <p class="ir" id="i62">_0000</p>
+                <input type="text" class="func" id="f62" />
+                <input type="text" class="code" id="c62" />
+            </div>
+            
+            
+            <div class="Memline" id="m63">
+                <p class="address" id="a63">(63)</p>
+                <p class="ir" id="i63">_0000</p>
+                <input type="text" class="func" id="f63" />
+                <input type="text" class="code" id="c63" />
+            </div>
+            
+            
+            <div class="Memline" id="m64">
+                <p class="address" id="a64">(64)</p>
+                <p class="ir" id="i64">_0000</p>
+                <input type="text" class="func" id="f64" />
+                <input type="text" class="code" id="c64" />
+            </div>
+            
+            
+            <div class="Memline" id="m65">
+                <p class="address" id="a65">(65)</p>
+                <p class="ir" id="i65">_0000</p>
+                <input type="text" class="func" id="f65" />
+                <input type="text" class="code" id="c65" />
+            </div>
+            
+            
+            <div class="Memline" id="m66">
+                <p class="address" id="a66">(66)</p>
+                <p class="ir" id="i66">_0000</p>
+                <input type="text" class="func" id="f66" />
+                <input type="text" class="code" id="c66" />
+            </div>
+            
+            
+            <div class="Memline" id="m67">
+                <p class="address" id="a67">(67)</p>
+                <p class="ir" id="i67">_0000</p>
+                <input type="text" class="func" id="f67" />
+                <input type="text" class="code" id="c67" />
+            </div>
+            
+            
+            <div class="Memline" id="m68">
+                <p class="address" id="a68">(68)</p>
+                <p class="ir" id="i68">_0000</p>
+                <input type="text" class="func" id="f68" />
+                <input type="text" class="code" id="c68" />
+            </div>
+            
+            
+            <div class="Memline" id="m69">
+                <p class="address" id="a69">(69)</p>
+                <p class="ir" id="i69">_0000</p>
+                <input type="text" class="func" id="f69" />
+                <input type="text" class="code" id="c69" />
+            </div>
+            
+            
+            <div class="Memline" id="m70">
+                <p class="address" id="a70">(70)</p>
+                <p class="ir" id="i70">_0000</p>
+                <input type="text" class="func" id="f70" />
+                <input type="text" class="code" id="c70" />
+            </div>
+            
+            
+            <div class="Memline" id="m71">
+                <p class="address" id="a71">(71)</p>
+                <p class="ir" id="i71">_0000</p>
+                <input type="text" class="func" id="f71" />
+                <input type="text" class="code" id="c71" />
+            </div>
+            
+            
+            <div class="Memline" id="m72">
+                <p class="address" id="a72">(72)</p>
+                <p class="ir" id="i72">_0000</p>
+                <input type="text" class="func" id="f72" />
+                <input type="text" class="code" id="c72" />
+            </div>
+            
+            
+            <div class="Memline" id="m73">
+                <p class="address" id="a73">(73)</p>
+                <p class="ir" id="i73">_0000</p>
+                <input type="text" class="func" id="f73" />
+                <input type="text" class="code" id="c73" />
+            </div>
+            
+            
+            <div class="Memline" id="m74">
+                <p class="address" id="a74">(74)</p>
+                <p class="ir" id="i74">_0000</p>
+                <input type="text" class="func" id="f74" />
+                <input type="text" class="code" id="c74" />
+            </div>
+            
+            
+            <div class="Memline" id="m75">
+                <p class="address" id="a75">(75)</p>
+                <p class="ir" id="i75">_0000</p>
+                <input type="text" class="func" id="f75" />
+                <input type="text" class="code" id="c75" />
+            </div>
+            
+            
+            <div class="Memline" id="m76">
+                <p class="address" id="a76">(76)</p>
+                <p class="ir" id="i76">_0000</p>
+                <input type="text" class="func" id="f76" />
+                <input type="text" class="code" id="c76" />
+            </div>
+            
+            
+            <div class="Memline" id="m77">
+                <p class="address" id="a77">(77)</p>
+                <p class="ir" id="i77">_0000</p>
+                <input type="text" class="func" id="f77" />
+                <input type="text" class="code" id="c77" />
+            </div>
+            
+            
+            <div class="Memline" id="m78">
+                <p class="address" id="a78">(78)</p>
+                <p class="ir" id="i78">_0000</p>
+                <input type="text" class="func" id="f78" />
+                <input type="text" class="code" id="c78" />
+            </div>
+            
+            
+            <div class="Memline" id="m79">
+                <p class="address" id="a79">(79)</p>
+                <p class="ir" id="i79">_0000</p>
+                <input type="text" class="func" id="f79" />
+                <input type="text" class="code" id="c79" />
+            </div>
+            
+            
+            <div class="Memline" id="m80">
+                <p class="address" id="a80">(80)</p>
+                <p class="ir" id="i80">_0000</p>
+                <input type="text" class="func" id="f80" />
+                <input type="text" class="code" id="c80" />
+            </div>
+            
+            
+            <div class="Memline" id="m81">
+                <p class="address" id="a81">(81)</p>
+                <p class="ir" id="i81">_0000</p>
+                <input type="text" class="func" id="f81" />
+                <input type="text" class="code" id="c81" />
+            </div>
+            
+            
+            <div class="Memline" id="m82">
+                <p class="address" id="a82">(82)</p>
+                <p class="ir" id="i82">_0000</p>
+                <input type="text" class="func" id="f82" />
+                <input type="text" class="code" id="c82" />
+            </div>
+            
+            
+            <div class="Memline" id="m83">
+                <p class="address" id="a83">(83)</p>
+                <p class="ir" id="i83">_0000</p>
+                <input type="text" class="func" id="f83" />
+                <input type="text" class="code" id="c83" />
+            </div>
+            
+            
+            <div class="Memline" id="m84">
+                <p class="address" id="a84">(84)</p>
+                <p class="ir" id="i84">_0000</p>
+                <input type="text" class="func" id="f84" />
+                <input type="text" class="code" id="c84" />
+            </div>
+            
+            
+            <div class="Memline" id="m85">
+                <p class="address" id="a85">(85)</p>
+                <p class="ir" id="i85">_0000</p>
+                <input type="text" class="func" id="f85" />
+                <input type="text" class="code" id="c85" />
+            </div>
+            
+            
+            <div class="Memline" id="m86">
+                <p class="address" id="a86">(86)</p>
+                <p class="ir" id="i86">_0000</p>
+                <input type="text" class="func" id="f86" />
+                <input type="text" class="code" id="c86" />
+            </div>
+            
+            
+            <div class="Memline" id="m87">
+                <p class="address" id="a87">(87)</p>
+                <p class="ir" id="i87">_0000</p>
+                <input type="text" class="func" id="f87" />
+                <input type="text" class="code" id="c87" />
+            </div>
+            
+            
+            <div class="Memline" id="m88">
+                <p class="address" id="a88">(88)</p>
+                <p class="ir" id="i88">_0000</p>
+                <input type="text" class="func" id="f88" />
+                <input type="text" class="code" id="c88" />
+            </div>
+            
+            
+            <div class="Memline" id="m89">
+                <p class="address" id="a89">(89)</p>
+                <p class="ir" id="i89">_0000</p>
+                <input type="text" class="func" id="f89" />
+                <input type="text" class="code" id="c89" />
+            </div>
+            
+            
+            <div class="Memline" id="m90">
+                <p class="address" id="a90">(90)</p>
+                <p class="ir" id="i90">_0000</p>
+                <input type="text" class="func" id="f90" />
+                <input type="text" class="code" id="c90" />
+            </div>
+            
+            
+            <div class="Memline" id="m91">
+                <p class="address" id="a91">(91)</p>
+                <p class="ir" id="i91">_0000</p>
+                <input type="text" class="func" id="f91" />
+                <input type="text" class="code" id="c91" />
+            </div>
+            
+            
+            <div class="Memline" id="m92">
+                <p class="address" id="a92">(92)</p>
+                <p class="ir" id="i92">_0000</p>
+                <input type="text" class="func" id="f92" />
+                <input type="text" class="code" id="c92" />
+            </div>
+            
+            
+            <div class="Memline" id="m93">
+                <p class="address" id="a93">(93)</p>
+                <p class="ir" id="i93">_0000</p>
+                <input type="text" class="func" id="f93" />
+                <input type="text" class="code" id="c93" />
+            </div>
+            
+            
+            <div class="Memline" id="m94">
+                <p class="address" id="a94">(94)</p>
+                <p class="ir" id="i94">_0000</p>
+                <input type="text" class="func" id="f94" />
+                <input type="text" class="code" id="c94" />
+            </div>
+            
+            
+            <div class="Memline" id="m95">
+                <p class="address" id="a95">(95)</p>
+                <p class="ir" id="i95">_0000</p>
+                <input type="text" class="func" id="f95" />
+                <input type="text" class="code" id="c95" />
+            </div>
+            
+            
+            <div class="Memline" id="m96">
+                <p class="address" id="a96">(96)</p>
+                <p class="ir" id="i96">_0000</p>
+                <input type="text" class="func" id="f96" />
+                <input type="text" class="code" id="c96" />
+            </div>
+            
+            
+            <div class="Memline" id="m97">
+                <p class="address" id="a97">(97)</p>
+                <p class="ir" id="i97">_0000</p>
+                <input type="text" class="func" id="f97" />
+                <input type="text" class="code" id="c97" />
+            </div>
+            
+            
+            <div class="Memline" id="m98">
+                <p class="address" id="a98">(98)</p>
+                <p class="ir" id="i98">_0000</p>
+                <input type="text" class="func" id="f98" />
+                <input type="text" class="code" id="c98" />
+            </div>
+            
+            
+            <div class="Memline" id="m99">
+                <p class="address" id="a99">(99)</p>
+                <p class="ir" id="i99">_0000</p>
+                <input type="text" class="func" id="f99" />
+                <input type="text" class="code" id="c99" />
+            </div>
+        </div>
+        <div id='console'>
+          {/* <p>CONSOLE : </p> */}
+          <div id="output" >
+            <p id='c'>OUTPUT</p>
+          </div>
+          <button id='runner' onClick={Machine()} >RUN</button>
+        </div>
+      </div>
+    <script src="script.js"></script>
+  </body>
+</html>

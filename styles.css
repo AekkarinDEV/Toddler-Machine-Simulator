@@ -1,0 +1,95 @@
+body{
+    margin: 0;
+}
+.Hdiv {
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+  
+  }
+  
+  .Header {
+    text-align: center;
+    justify-content: center;
+    color: red;
+    font-size: 40px;
+    padding: 0;
+    margin: 10px;
+  }
+  
+  #contents {
+    display: grid;
+    grid-template-columns: 0.7fr 2fr 1fr;
+  }
+  
+  #syntax{
+    background-color: azures;
+    height: 1000px;
+    justify-content: center;
+  }
+  #editor{
+    background-color: whitesmoke;
+    /* height: 1000px; */
+  }
+  #console{
+    background-color: bisque;
+    height: 1000px;
+    /* display: flex;
+    justify-content: center; */
+  }
+  
+  #console>p {
+    display: inline;
+  }
+  
+  .Memline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .address {
+    margin: 0;
+    margin-right: 1px;
+    background-color: skyblue;
+    padding: 3px;
+    border: solid 1px black;
+    border-radius: 5px;
+  
+  }
+  
+  .func,.code {
+    height: 20px;
+    margin: 0;
+  }
+  
+  .func{
+    width: 120px;
+    text-align: right;
+  }
+  .code{
+    width: 180px;
+  }
+  .ir {
+    margin: 2px;
+    background-color: seagreen;
+    border: solid 1px black;
+    padding: 3px;
+    border-radius: 5px;
+    
+  }
+  
+  #output {
+    background: white;
+    height: 300px;
+    width: 80%;
+    max-width: 300px;
+    margin-top: 20px;
+    padding: 10px;
+  }
+  
+  .runner{
+    display: inline;
+  }
