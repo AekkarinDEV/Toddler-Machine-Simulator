@@ -3,10 +3,12 @@ let carray = [];
 let outputque = [];
 let IR = [];
 let AC = 0;
+const outputdiv = document.getElementById("output");
 const command = ["LOAD","STORE","ADD","SUB","HALT"
     ,"JUMP","JUMPZ","JUMPN","INPUT","OUTPUT"
 ]
 const run = () => {
+    outputdiv.innerHTML = null;
     farray = [];
     carray = [];
     AC = 0;
@@ -125,9 +127,10 @@ const run = () => {
                 break;
         }
     }
-
     for(let o = 0;o<outputque.length;o++){
-        console.log(outputque[o] + "output naka");
+        const tempo = document.createElement('p');
+        tempo.innerHTML = outputque[o];
+        outputdiv.appendChild(tempo);
     }
     
 }

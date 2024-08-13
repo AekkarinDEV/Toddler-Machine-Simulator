@@ -1,5 +1,16 @@
+html{
+  min-width: 800px;
+}
 body{
     margin: 0;
+    
+}
+
+input {
+  border-radius: 3px;
+  box-shadow: none;
+  border-color: #b0b0b0;
+  
 }
 .Hdiv {
     background-color: aquamarine;
@@ -23,25 +34,50 @@ body{
   }
   
   #syntax{
-    background-color: azures;
-    height: 1000px;
+    background-color: #212121;
+    height: 2980px;
+    justify-content: center;
+  }
+  #syntax>p{
+    color: gainsboro;
+    margin-left: 15px;
+    display: flex;
     justify-content: center;
   }
   #editor{
-    background-color: whitesmoke;
+    background-color: #b0b0b0;
     /* height: 1000px; */
   }
   #console{
-    background-color: bisque;
-    height: 1000px;
+    background-color: #212121;
+    height: 2980px;
     /* display: flex;
     justify-content: center; */
+    position: sticky;
+    top: 0;
   }
   
   #console>p {
-    display: inline;
+    margin-left: 10px;
+    margin-bottom: -10px;
+    padding: 0;
+    color: gainsboro;
+    
   }
-  
+  #cCon {
+    display: flex;
+    justify-content: center;
+  }
+
+  #runner{
+    margin-top: 10px;
+    margin-left: 45px;
+    width: 150px;
+    height: 50px;
+    font-weight: 900;
+    background-color: #f9625d;
+  }
+
   .Memline {
     display: flex;
     justify-content: center;
@@ -55,7 +91,7 @@ body{
     margin-right: 1px;
     background-color: skyblue;
     padding: 3px;
-    border: solid 1px black;
+    border: solid 1px #b0b0b0;
     border-radius: 5px;
   
   }
@@ -75,19 +111,25 @@ body{
   .ir {
     margin: 2px;
     background-color: seagreen;
-    border: solid 1px black;
+    border: solid 1px #b0b0b0;
     padding: 3px;
     border-radius: 5px;
     
   }
   
   #output {
-    background: white;
+    background: #1f1f1f;
     height: 300px;
     width: 80%;
     max-width: 300px;
     margin-top: 20px;
     padding: 10px;
+    border: solid 3px gainsboro;
+    padding: 10px;
+  }
+  #output>p {
+    color: aliceblue;
+    font-size: larger;
   }
   
   .runner{
