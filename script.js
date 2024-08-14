@@ -3,9 +3,14 @@ let carray = [];
 let outputque = [];
 let IR = [];
 let AC = 0;
+let MDR = 0;
+let SP = 0;
+let XR =0;
 const outputdiv = document.getElementById("output");
 const command = ["LOAD","STORE","ADD","SUB","HALT"
-    ,"JUMP","JUMPZ","JUMPN","INPUT","OUTPUT"
+                ,"JUMP","JUMPZ","JUMPN","INPUT","OUTPUT",
+                "LOADX","STOREX","RETURN","CALL","PUSH",
+                "PUSH","POP","INCHAR","OUTCHAR"
 ]
 const run = () => {
     outputdiv.innerHTML = null;
@@ -51,13 +56,19 @@ const run = () => {
         let tempcode = carray[i];
         let comcode = "";
         let variable = "";
+        let isthereXR = false;
+        let XRfinder = 0;
+        let XRvar = ""
         let varindex = 0;
+        let XRindex=0;
         let prevj = 0;
+
+
         for(let j = 0;j<tempcode.length;j++){
             if(tempcode[j] != ' '){
                 comcode += tempcode[j];
-                
-                }
+            
+            }
                 if(comcode == "JUMP"){
                     if(tempcode[j+1] == "Z"||tempcode[j+1] == "N"){
                         comcode += tempcode[j+1];
@@ -71,12 +82,41 @@ const run = () => {
         }
        
         for(let k = prevj+1;k<tempcode.length;k++){
-          if(tempcode[k] != ' '){
-            variable += tempcode[k];    
+            if(tempcode[k] == "("){
+                isthereXR = true;
+                XRfinder =  k + 1;
+                break;
+            }
+            if(tempcode[k] != ' '){
+                variable += tempcode[k];    
         }
+       }
+        console.log("XRfinder" + XRfinder);
+        if(isthereXR == true){
+            // while(XRfinder<tempcode.length || tempcode[XRfinder] != ")"){
+            //     XRvar += tempcode[XRfinder];
+            //     XRfinder = XRfinder +1;
+            // }
+            for(let r = XRfinder;r<tempcode.length;r++){
+                if(tempcode[r] ==')'){
+                    break;
+                }else{
+                    XRvar += tempcode[r];
+                }
+            }
+
+            for(let x = 0;x<farray.length;x++){
+                if(XRvar == farray[x]){
+                    XRindex = x;
+                }
+            }
         }
+        
+        
         console.log(comcode);
         console.log(variable);
+        console.log("XR var = "+ XRvar);
+        console.log("XR index = "+ XRindex);
 
         for(let d =0;d<carray.length;d++){
             if(farray[d] == variable){
@@ -84,17 +124,30 @@ const run = () => {
                 console.log(varindex);
             }
         }
-       console.log(Number(carray[varindex]) + "indexvalue")
-        //exercute
+       console.log(Number(carray[varindex]) + "indexvalue");
+        
+       
+       
+       //exercute
         if(comcode == "HALT"){
            i = i + carray.length
         }
         switch(comcode) {
             case "LOAD":
+                if(isthereXR == true){
+                    AC = Number(carray[varindex+ XR]) + XR;
+                }else{
                 AC = Number(carray[varindex]);
+            }
+                
                 break;
             case "STORE":
                 carray[varindex] = AC;
+                if(isthereXR == true){
+                    AC = Number(carray[varindex]) ;
+                }else{
+                AC = Number(carray[varindex]);
+                }
                 break;
             case "ADD":
                 AC = AC + Number(carray[varindex]);
@@ -125,12 +178,34 @@ const run = () => {
                     i = varindex - 1;  
                   }
                 break;
+            case "LOADX":
+                XR = Number(carray[varindex]);
+                break;
+            case "STOREX":
+                  carray[varindex] = XR
+                break;
+            // case :
+            //     break;
+            // case :
+            //     break;
+            // case :
+            //     break;
+            // case :
+            //     break;
+            // case :
+            //     break;
+            // case :
+            //     break;
         }
     }
+    
+    }
+
+    //outputrender
     for(let o = 0;o<outputque.length;o++){
         const tempo = document.createElement('p');
         tempo.innerHTML = outputque[o];
         outputdiv.appendChild(tempo);
-    }
+    } 
+
     
-}
