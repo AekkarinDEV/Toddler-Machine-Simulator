@@ -13,6 +13,45 @@ const command = ["LOAD","STORE","ADD","SUB","HALT"
                 "LOADX","STOREX","RETURN","CALL","PUSH",
                 "PUSH","POP","INCHAR","OUTCHAR"
 ]
+
+//create memline
+const editor = document.getElementById("editor");
+ 
+for(let c =1 ;c<=99;c++){
+    
+    const memline = document.createElement("div");
+    memline.setAttribute('class',"Memline");
+    memline.setAttribute('id',"m"+c.toString());
+    
+    const address = document.createElement("p");
+    address.setAttribute('class',"address");
+    address.setAttribute('id',"a"+c.toString());
+    address.innerHTML = "("+c.toString()+")";
+    memline.appendChild(address);
+    const ir = document.createElement("p");
+    ir.setAttribute('class',"ir");
+    ir.setAttribute('id',"i"+c.toString());
+    ir.innerHTML = "_0000";
+    memline.appendChild(ir);
+    
+    const func = document.createElement("input");
+    func.setAttribute('class',"func");
+    func.setAttribute('id',"f"+c.toString());
+    func.setAttribute('type',"text");
+    memline.appendChild(func);
+    const code = document.createElement("input");
+    code.setAttribute('class',"code");
+    code.setAttribute('id',"c"+c.toString());
+    code.setAttribute('type',"text");
+    memline.appendChild(code);
+
+    editor.appendChild(memline);
+    
+    
+    
+    
+}
+
 const run = () => {
     outputdiv.innerHTML = null;
     farray = [];
@@ -187,24 +226,24 @@ const run = () => {
                   carray[varindex] = XR
                 break;
             case "LOADwxr":
-                if(XRvar == "XR"){
-                    AC = Number(carray[varindex + XR]);
-                }else{
-                AC = Number(carray[varindex + Number(carray[XRindex])]);
-                }
+                // if(XRvar == "XR"){
+                //     AC = Number(carray[varindex + XR]);
+                // }else{
+                // AC = Number(carray[varindex + Number(carray[XRindex])]);
+                // }
                 break;
             case "STOREwxr":
-                if(XRvar == "XR"){
-                    carray[varindex + XR] = AC
-                }else{
-                carray[varindex + Number(carray[XRindex])] = AC;
-            }
+            //     if(XRvar == "XR"){
+            //         carray[varindex + XR] = AC
+            //     }else{
+            //     carray[varindex + Number(carray[XRindex])] = AC;
+            // }
                 break;
             case "ADDwxr":
-                AC = AC + Number(carray[varindex + Number(carray[XRindex])]);
+                // AC = AC + Number(carray[varindex + Number(carray[XRindex])]);
                 break;
             case "SUBwxr":
-                AC = AC - Number(carray[varindex + Number(carray[XRindex])]);
+                // AC = AC - Number(carray[varindex + Number(carray[XRindex])]);
                 break;
             case "CALL":
                 returnpoint.push(i)
