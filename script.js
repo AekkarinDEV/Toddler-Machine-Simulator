@@ -1,6 +1,7 @@
 let farray = [];
 let carray = [];
 let outputque = [];
+let returnpoint=[];
 let IR = [];
 let AC = 0;
 let MDR = 0;
@@ -71,6 +72,18 @@ const run = () => {
             }
                 if(comcode == "JUMP"){
                     if(tempcode[j+1] == "Z"||tempcode[j+1] == "N"){
+                        comcode += tempcode[j+1];
+                        j++;
+                    }
+                }
+                if(comcode == "LOAD"){
+                    if(tempcode[j+1] == "X"||tempcode[j+1] == "X"){
+                        comcode += tempcode[j+1];
+                        j++;
+                    }
+                }
+                if(comcode == "STORE"){
+                    if(tempcode[j+1] == "X"||tempcode[j+1] == "X"){
                         comcode += tempcode[j+1];
                         j++;
                     }
@@ -168,26 +181,39 @@ const run = () => {
                 break;
             case "LOADX":
                 XR = Number(carray[varindex]);
+                console.log("xr = "+XR)
                 break;
             case "STOREX":
                   carray[varindex] = XR
                 break;
             case "LOADwxr":
-                console.log("vindex "+varindex + carray[XRindex])
+                if(XRvar == "XR"){
+                    AC = Number(carray[varindex + XR]);
+                }else{
                 AC = Number(carray[varindex + Number(carray[XRindex])]);
-                console.log("ac" + AC);
+                }
                 break;
             case "STOREwxr":
+                if(XRvar == "XR"){
+                    carray[varindex + XR] = AC
+                }else{
                 carray[varindex + Number(carray[XRindex])] = AC;
+            }
                 break;
-            // case :
-            //     break;
-            // case :
-            //     break;
-            // case :
-            //     break;
-            // case :
-            //     break;
+            case "ADDwxr":
+                AC = AC + Number(carray[varindex + Number(carray[XRindex])]);
+                break;
+            case "SUBwxr":
+                AC = AC - Number(carray[varindex + Number(carray[XRindex])]);
+                break;
+            case "CALL":
+                returnpoint.push(i)
+                 i = varindex - 1;
+                break;
+            case "RETURN":
+                i = (returnpoint[returnpoint.length-1]);
+                returnpoint.pop();
+                break;
         }
     }
     
