@@ -214,6 +214,19 @@ const run = () => {
                 i = (returnpoint[returnpoint.length-1]);
                 returnpoint.pop();
                 break;
+            case"INCHAR":
+                carray[varindex] = prompt("Enter value of "+variable).charCodeAt();
+                AC = Number(carray[varindex]);
+                break;
+            case"OUTCHAR":
+            let decimal = Number(carray[varindex]);
+            let outchar = String.fromCharCode(decimal);
+                outputque.push(outchar)
+                break;
+            // case:
+            //     break;
+            // case:
+            //     break;
         }
     }
     
