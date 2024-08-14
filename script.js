@@ -85,18 +85,15 @@ const run = () => {
             if(tempcode[k] == "("){
                 isthereXR = true;
                 XRfinder =  k + 1;
+                comcode = comcode + "wxr"
                 break;
             }
             if(tempcode[k] != ' '){
                 variable += tempcode[k];    
         }
        }
-        console.log("XRfinder" + XRfinder);
         if(isthereXR == true){
-            // while(XRfinder<tempcode.length || tempcode[XRfinder] != ")"){
-            //     XRvar += tempcode[XRfinder];
-            //     XRfinder = XRfinder +1;
-            // }
+           
             for(let r = XRfinder;r<tempcode.length;r++){
                 if(tempcode[r] ==')'){
                     break;
@@ -134,20 +131,12 @@ const run = () => {
         }
         switch(comcode) {
             case "LOAD":
-                if(isthereXR == true){
-                    AC = Number(carray[varindex+ XR]) + XR;
-                }else{
                 AC = Number(carray[varindex]);
-            }
-                
+                console.log("AC = "+ AC);
                 break;
             case "STORE":
                 carray[varindex] = AC;
-                if(isthereXR == true){
-                    AC = Number(carray[varindex]) ;
-                }else{
-                AC = Number(carray[varindex]);
-                }
+                console.log("STORE = "+ carray[varindex]);
                 break;
             case "ADD":
                 AC = AC + Number(carray[varindex]);
@@ -171,7 +160,6 @@ const run = () => {
                 break;
             case "OUTPUT":
                 outputque.push(carray[varindex])
-                // console.log(carray[varindex]+"outputja")
                 break;
             case "JUMPZ":
                 if(AC == 0 || AC == "0"){
@@ -184,10 +172,14 @@ const run = () => {
             case "STOREX":
                   carray[varindex] = XR
                 break;
-            // case :
-            //     break;
-            // case :
-            //     break;
+            case "LOADwxr":
+                console.log("vindex "+varindex + carray[XRindex])
+                AC = Number(carray[varindex + Number(carray[XRindex])]);
+                console.log("ac" + AC);
+                break;
+            case "STOREwxr":
+                carray[varindex + Number(carray[XRindex])] = AC;
+                break;
             // case :
             //     break;
             // case :
@@ -199,13 +191,15 @@ const run = () => {
         }
     }
     
-    }
 
-    //outputrender
     for(let o = 0;o<outputque.length;o++){
         const tempo = document.createElement('p');
         tempo.innerHTML = outputque[o];
         outputdiv.appendChild(tempo);
     } 
 
+}
+
+    //outputrender
+    
     
