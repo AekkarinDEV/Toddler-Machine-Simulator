@@ -93,6 +93,8 @@ input {
     padding: 3px;
     border: solid 1px #b0b0b0;
     border-radius: 5px;
+    width: 30px;
+    text-align: center;
   
   }
   

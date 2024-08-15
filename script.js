@@ -12,7 +12,7 @@ const command = ["LOAD","STORE","ADD","SUB","HALT"
                 ,"JUMP","JUMPZ","JUMPN","INPUT","OUTPUT",
                 "LOADX","STOREX","RETURN","CALL","PUSH",
                 "PUSH","POP","INCHAR","OUTCHAR"
-]
+                ]
 
 //create memline
 const editor = document.getElementById("editor");
@@ -28,11 +28,12 @@ for(let c =1 ;c<=99;c++){
     address.setAttribute('id',"a"+c.toString());
     address.innerHTML = "("+c.toString()+")";
     memline.appendChild(address);
-    const ir = document.createElement("p");
-    ir.setAttribute('class',"ir");
-    ir.setAttribute('id',"i"+c.toString());
-    ir.innerHTML = "_0000";
-    memline.appendChild(ir);
+    
+    // const ir = document.createElement("p");
+    // ir.setAttribute('class',"ir");
+    // ir.setAttribute('id',"i"+c.toString());
+    // ir.innerHTML = "_0000";
+    // memline.appendChild(ir);
     
     const func = document.createElement("input");
     func.setAttribute('class',"func");
@@ -168,10 +169,10 @@ const run = () => {
         }
         
         
-        // console.log(comcode);
-        // console.log(variable);
-        // console.log("XR var = "+ XRvar);
-        // console.log("XR index = "+ XRindex);
+        console.log(comcode);
+        console.log(variable);
+        console.log("XR var = "+ XRvar);
+        console.log("XR index = "+ XRindex);
 
 
         for(let d =0;d<carray.length;d++){
@@ -191,8 +192,12 @@ const run = () => {
         }
         switch(comcode) {
             case "LOAD":
+                if(comcode.includes('#')){
+                    AC = varindex;
+                }else{
                 AC = Number(carray[varindex]);
                 console.log("AC = "+ AC);
+                }
                 break;
 
             case "STORE":
@@ -250,6 +255,9 @@ const run = () => {
                 // }else{
                 // AC = Number(carray[varindex + Number(carray[XRindex])]);
                 // }
+                  let xl = Number(variable);
+                  AC = Number(carray[XRindex+ xl])
+
                 break;
 
             case "STOREwxr":
@@ -258,20 +266,21 @@ const run = () => {
             //     }else{
             //     carray[varindex + Number(carray[XRindex])] = AC;
             // }
-
+            let xs = Number(variable);
+            Number(carray[XRindex+ xs]) = AC;
 
                 break;
 
             case "ADDwxr":
                 // AC = AC + Number(carray[varindex + Number(carray[XRindex])]);
-
-
+                let xa = Number(variable);
+                AC = AC -  Number(carray[XRindex+ xa]);
                 break;
 
             case "SUBwxr":
                 // AC = AC - Number(carray[varindex + Number(carray[XRindex])]);
-
-
+                let xsu = Number(variable);
+                AC = AC -  Number(carray[XRindex+ xsu]);
                 break;
 
             case "CALL":
@@ -293,6 +302,7 @@ const run = () => {
             let decimal = Number(carray[varindex]);
             let outchar = String.fromCharCode(decimal);
                 outputque.push(outchar)
+                console.log("char = " + outchar)
                 break;
             // case:
             //     break;
