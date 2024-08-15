@@ -6,12 +6,12 @@ body{
     
 }
 
-input {
+/* input {
   border-radius: 3px;
   box-shadow: none;
   border-color: #b0b0b0;
   
-}
+} */
 .Hdiv {
     background-color: aquamarine;
     display: flex;
@@ -46,6 +46,7 @@ input {
   }
   #editor{
     background-color: #b0b0b0;
+    display: flex;
     /* height: 1000px; */
   }
   #console{
@@ -78,7 +79,7 @@ input {
     background-color: #f9625d;
   }
 
-  .Memline {
+  /* .Memline {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -117,11 +118,11 @@ input {
     padding: 3px;
     border-radius: 5px;
     
-  }
+  } */
   
   #output {
     background: #1f1f1f;
-    height: 300px;
+    min-height: 300px;
     width: 80%;
     max-width: 300px;
     margin-top: 20px;
@@ -137,3 +138,14 @@ input {
   .runner{
     display: inline;
   }
+
+  .lines{
+    margin: 0;
+    margin-bottom: 0.6px;
+    font-size: 20px;
+  }
+
+  #inputcode{
+    font-size: 20px;
+  }
+
