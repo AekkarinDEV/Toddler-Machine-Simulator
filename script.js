@@ -46,10 +46,6 @@ for(let c =1 ;c<=99;c++){
     memline.appendChild(code);
 
     editor.appendChild(memline);
-    
-    
-    
-    
 }
 
 const run = () => {
@@ -71,9 +67,12 @@ const run = () => {
             farray.push(' ');
         }
     }
+
     for(let i= 0;i<99;i++){
             console.log('func/var '+ farray[i]);
-        }
+    }
+
+
     //carray
     for(let j= 1;j<=99;j++){
         toString(j);
@@ -86,6 +85,8 @@ const run = () => {
             carray.push(' ');
         }
     }
+
+
     for(let i= 0;i<99;i++){
             console.log("code  " +carray[i]);
     }
@@ -115,18 +116,21 @@ const run = () => {
                         j++;
                     }
                 }
+
                 if(comcode == "LOAD"){
                     if(tempcode[j+1] == "X"||tempcode[j+1] == "X"){
                         comcode += tempcode[j+1];
                         j++;
                     }
                 }
+
                 if(comcode == "STORE"){
                     if(tempcode[j+1] == "X"||tempcode[j+1] == "X"){
                         comcode += tempcode[j+1];
                         j++;
                     }
                 }
+
             if(command.includes(comcode)){
                prevj = j
                 break;
@@ -140,12 +144,14 @@ const run = () => {
                 comcode = comcode + "wxr"
                 break;
             }
+
             if(tempcode[k] != ' '){
                 variable += tempcode[k];    
-        }
+            }
        }
+
         if(isthereXR == true){
-           
+        
             for(let r = XRfinder;r<tempcode.length;r++){
                 if(tempcode[r] ==')'){
                     break;
@@ -162,10 +168,11 @@ const run = () => {
         }
         
         
-        console.log(comcode);
-        console.log(variable);
-        console.log("XR var = "+ XRvar);
-        console.log("XR index = "+ XRindex);
+        // console.log(comcode);
+        // console.log(variable);
+        // console.log("XR var = "+ XRvar);
+        // console.log("XR index = "+ XRindex);
+
 
         for(let d =0;d<carray.length;d++){
             if(farray[d] == variable){
@@ -173,7 +180,8 @@ const run = () => {
                 console.log(varindex);
             }
         }
-       console.log(Number(carray[varindex]) + "indexvalue");
+
+    //    console.log(Number(carray[varindex]) + "indexvalue");
         
        
        
@@ -186,45 +194,56 @@ const run = () => {
                 AC = Number(carray[varindex]);
                 console.log("AC = "+ AC);
                 break;
+
             case "STORE":
                 carray[varindex] = AC;
                 console.log("STORE = "+ carray[varindex]);
                 break;
+
             case "ADD":
                 AC = AC + Number(carray[varindex]);
                 console.log("afterSUB"+ AC);
                 break;
+
             case "SUB":
                 AC = AC - Number(carray[varindex]);
                 console.log("afterSUB"+ AC);
                 break;
+
             case "JUMP":
                  i = varindex - 1;
                 break;
+
             case "JUMPN":
                 if(AC<0){
                   i = varindex - 1;  
                 }
                 break;
+
             case "INPUT":
                 carray[varindex] = prompt("Enter value of "+variable);
                 AC = Number(carray[varindex]);
                 break;
+
             case "OUTPUT":
                 outputque.push(carray[varindex])
                 break;
+
             case "JUMPZ":
                 if(AC == 0 || AC == "0"){
                     i = varindex - 1;  
                   }
                 break;
+
             case "LOADX":
                 XR = Number(carray[varindex]);
                 console.log("xr = "+XR)
                 break;
+
             case "STOREX":
                   carray[varindex] = XR
                 break;
+
             case "LOADwxr":
                 // if(XRvar == "XR"){
                 //     AC = Number(carray[varindex + XR]);
@@ -232,31 +251,44 @@ const run = () => {
                 // AC = Number(carray[varindex + Number(carray[XRindex])]);
                 // }
                 break;
+
             case "STOREwxr":
             //     if(XRvar == "XR"){
             //         carray[varindex + XR] = AC
             //     }else{
             //     carray[varindex + Number(carray[XRindex])] = AC;
             // }
+
+
                 break;
+
             case "ADDwxr":
                 // AC = AC + Number(carray[varindex + Number(carray[XRindex])]);
+
+
                 break;
+
             case "SUBwxr":
                 // AC = AC - Number(carray[varindex + Number(carray[XRindex])]);
+
+
                 break;
+
             case "CALL":
                 returnpoint.push(i)
                  i = varindex - 1;
                 break;
+
             case "RETURN":
                 i = (returnpoint[returnpoint.length-1]);
                 returnpoint.pop();
                 break;
+
             case"INCHAR":
                 carray[varindex] = prompt("Enter value of "+variable).charCodeAt();
                 AC = Number(carray[varindex]);
                 break;
+
             case"OUTCHAR":
             let decimal = Number(carray[varindex]);
             let outchar = String.fromCharCode(decimal);
