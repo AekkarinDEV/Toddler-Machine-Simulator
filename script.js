@@ -5,6 +5,8 @@ for(let addressNum = 0;addressNum<=99;addressNum++){
     address.innerHTML = ("["+addressNum+"]");
     addressDiv.appendChild(address)
 }
+
+let loopCut = 0;
 const run = ()  => {
     //codereader
     let functionContainer = [];
@@ -19,6 +21,7 @@ const run = ()  => {
     outputdiv.innerHTML="";
     userInputRemovedSpace.forEach(element =>  {
         lineOfCode = lineOfCode+1;
+        if(element.includes("/") == false){
         if(lineOfCode < userInputRemovedSpace.length){
         // console.log(element);
         let fandc = element.split(":")
@@ -49,6 +52,7 @@ const run = ()  => {
        
        
             }
+        }
         let fixfunction = [];
         functionContainer.forEach(item =>{
             let arroffunc = item.split(" ");
@@ -59,7 +63,9 @@ const run = ()  => {
             item = item.replace("\n","");
             console.log(item);
             fixfunction.push(item);
+        
         })
+      
         functionContainer = fixfunction;
     });
     
@@ -138,6 +144,11 @@ const run = ()  => {
      
                  case "JUMP":
                     pointer = indexOfValue - 1;
+                    loopCut = loopCut+1;
+                    if(loopCut >= 300){
+                        pointer = pointer+1000;
+                        alert("แก้โค้ดครับ มีลูปนรก");
+                    }
                      break;
      
                  case "JUMPN":
@@ -230,6 +241,7 @@ const run = ()  => {
              tempo.innerHTML = outputque[o];
              outputdiv.appendChild(tempo);
          } 
+         console.log("program end");
         
 }
 
