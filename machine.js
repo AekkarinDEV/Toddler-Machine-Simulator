@@ -13,11 +13,14 @@ const run = ()  => {
     let VVcontainer = [];
     let sudoStack = [];
     let lineOfCode = 0;
+    const comment = "//";
     const outputdiv = document.getElementById("output");
     let userInput = document.getElementById("inputcode").value;
     let userInputRemovedSpace = userInput.split(";");
     outputdiv.innerHTML="";
     userInputRemovedSpace.forEach(element =>  {
+        console.log(element.includes(comment));
+        if(element.includes(comment) == false){
         lineOfCode = lineOfCode+1;
         if(lineOfCode < userInputRemovedSpace.length){
         // console.log(element);
@@ -61,6 +64,7 @@ const run = ()  => {
             fixfunction.push(item);
         })
         functionContainer = fixfunction;
+    }
     });
     
     console.log(codeContainer);
