@@ -1,7 +1,7 @@
 const addressDiv = document.getElementById("address");
 for(let addressNum = 0;addressNum<=99;addressNum++){
     const address = document.createElement("p");
-    address.setAttribute("class","lines")
+    address.setAttribute("class","lines p-0 m-0")
     address.innerHTML = ("["+addressNum+"]");
     addressDiv.appendChild(address)
 }
@@ -258,9 +258,5 @@ const run = ()  => {
              tempo.innerHTML = outputque[o];
              outputdiv.appendChild(tempo);
          } 
-         console.log("program end");
-        
-}
-
-
-    
+         console.log("program end");      
+} 
