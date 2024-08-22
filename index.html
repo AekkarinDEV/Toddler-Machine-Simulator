@@ -3,48 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image" href="./assets/48fb89ba-914b-4572-a909-fafdcb7bc4d9.jpg" />
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <meta="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Master-Kumron-Simulator</title>
   </head>
   <body>
-    <div class='Hdiv'>
-        <h1 class="Header">Toddler Machine Simulator</h1>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <h1 class="h3">Toddler Machine Simulator</h1>
         </div>
-      <div id='contents'>
-        <div id='syntax'>
-         <p>1xx LOAD xx</p>
-         <p>2xx STORE xx</p>
-         <p>3xx ADD xx</p>
-         <p>4xx SUB xx</p>
-         <p>500 HALT</p>
-         <p>5xx JUMP xx</p>
-         <p>6xx JUMPZ xx</p>
-         <p>7xx JUMPN xx</p>
-         <p>8xx INPUT xx</p>
-         <p>9xx OUTPUT xx</p>
-         <p></p>
+      </div>
+     
+      <div class="row">
+        <div class="col bg-dark text-light col-2">
+         <p>LOAD xx</p>
+         <p>STORE xx</p>
+         <p>ADD xx</p>
+         <p>SUB xx</p>
+         <p>HALT</p>
+         <p>JUMP xx</p>
+         <p>JUMPZ xx</p>
+         <p>JUMPN xx</p>
+         <p>INPUT xx</p>
+         <p>OUTPUT xx</p>
+         <p>LOADX xx</p>
+         <p>STOREX xx</p>
+         <p>LOAD xx(XR)</p>
+         <p>STORE xx(XR)</p>
+         <p>RETURN</p>
+         <p>CALL xx</p>
+         <p>PUSH xx</p>
+         <p>POP xx</p>
+         <p>INCHAR xx</p>
+         <p>OUTCHAR xx</p>
          <p>DEVELOPMENT:</p>
          <p>AekkarinDEV</p>
          <p>#CS-KKU-39</p>
         </div>
-        <div id='editor'>
-          <div id = "address"></div>
-          <div id="input">
-            <textarea name="codeeditor" id="inputcode" rows="99" cols="40">
-            </textarea>
+
+        <div class="col col-7">
+          <div class="editor d-flex flex-row">
+            <div id = "address"></div>
+            <div id="input">
+              <textarea name="codeeditor" id="inputcode" rows="99" cols="40"></textarea>
+            </div>
           </div>
         </div>
-        <div id='console'>
-            <p id="ct">CONSOLE : </p>
-        <div id="cCon">
-           
-          <div id="output" >
-          </div>
-        </div>
+
+        <div class="col col-3">
+          <p id="ct">CONSOLE : </p>
+          <div id="output" ></div>
           <button id='runner' onClick="run()" >RUN</button>
         </div>
-      </div>
+     </div>
+  </div>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
